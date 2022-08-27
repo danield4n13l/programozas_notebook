@@ -1,0 +1,15 @@
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.csproj.AssemblyReference.cache
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.AssemblyInfoInputs.cache
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.AssemblyInfo.cs
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.csproj.CoreCompileInputs.cache
+D:\Documents\Programming\csharp\korrep\programozas_notebook\bin\Debug\net6.0\programozas_notebook.exe
+D:\Documents\Programming\csharp\korrep\programozas_notebook\bin\Debug\net6.0\programozas_notebook.deps.json
+D:\Documents\Programming\csharp\korrep\programozas_notebook\bin\Debug\net6.0\programozas_notebook.runtimeconfig.json
+D:\Documents\Programming\csharp\korrep\programozas_notebook\bin\Debug\net6.0\programozas_notebook.dll
+D:\Documents\Programming\csharp\korrep\programozas_notebook\bin\Debug\net6.0\programozas_notebook.pdb
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.dll
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\refint\programozas_notebook.dll
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.pdb
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\programozas_notebook.genruntimeconfig.cache
+D:\Documents\Programming\csharp\korrep\programozas_notebook\obj\Debug\net6.0\ref\programozas_notebook.dll
