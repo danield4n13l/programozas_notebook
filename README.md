@@ -20,7 +20,14 @@ Ez a könyv-páros megtanít:
 * Project Jupyter [(jupyter.org)](https://jupyter.org/) vagy Visual Studio Code [(code.visualstudio.com)](https://code.visualstudio.com/)
   * Ha VS Code-ot használsz, akkor a .NET Interactive Notebooks bővítmény is kell [(marketplace.visualstudio.com)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode)
 * .NET 6 [(dotnet.microsoft.com)](https://dotnet.microsoft.com/download/dotnet/6.0)
-* .NET Interactive kernel (`dotnet tool install --global Microsoft.dotnet-interactive
+* .NET Interactive kernel (`dotnet tool install --global Microsoft.dotnet-interactive` majd `dotnet interactive install jupyter`)
+
+## Licensz
+
+Ez a repo GNU GPL v3 licensz alatt áll. Lásd: LICENSE fájl, [(gnu.org)](https://www.gnu.org/licenses/gpl-3.0.html)
+
+A könyvek CC BY SA 4.0 alatt állnak. Lásd: [(creativecommons.org)](https://creativecommons.org/licenses/by-sa/4.0/)  
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ## Források
 
