@@ -23,8 +23,8 @@ Ez a könyv-páros megtanít:
 
 # Források:
 
-.NET documentation [(docs.microsoft.com)](https://docs.microsoft.com/en-us/dotnet/fundamentals/)
-Sololearn [(sololearn.com)](https://sololearn.com)
-C# Tutorial.hu [(csharptutorial.hu)](https://csharptutorial.hu/docs/hellovilag-hellocsharp/)
-tutorialspoint C# Tutorial [(tutorialspoint.com)](https://www.tutorialspoint.com/csharp/)
-TutorialsTeacher [(tutorialsteacher.com)](https://www.tutorialsteacher.com/)
+* .NET documentation [(docs.microsoft.com)](https://docs.microsoft.com/en-us/dotnet/fundamentals/)
+* Sololearn [(sololearn.com)](https://sololearn.com)
+* C# Tutorial.hu [(csharptutorial.hu)](https://csharptutorial.hu/docs/hellovilag-hellocsharp/)
+* tutorialspoint C# Tutorial [(tutorialspoint.com)](https://www.tutorialspoint.com/csharp/)
+* TutorialsTeacher [(tutorialsteacher.com)](https://www.tutorialsteacher.com/)
