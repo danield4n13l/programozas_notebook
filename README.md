@@ -15,7 +15,7 @@ Ez a könyv-páros megtanít:
 * .html (Renderelt HTML all-inclusive környezet)
 * .pdf (Pandoc-generált nyomtatvány, margóhibákkal, NEM AJÁNLOTT)
 
-## Az interaktív futtatáshoz szükséges lehet
+## Az interaktív futtatáshoz szükséges
 
 * Project Jupyter [(jupyter.org)](https://jupyter.org/) vagy Visual Studio Code [(code.visualstudio.com)](https://code.visualstudio.com/)
   * Ha VS Code-ot használsz, akkor a .NET Interactive Notebooks bővítmény is kell [(marketplace.visualstudio.com)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode)
