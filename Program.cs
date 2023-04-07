@@ -39,6 +39,7 @@ namespace Program
 
             string asd = "nuiznf";
             string qwi = new String(new char[] {'h', 'e', 'l', 'l', 'o', '\x00'});
+            System.Console.WriteLine(asd + "\n" + qwi);
 
 
         }
