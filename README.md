@@ -17,7 +17,7 @@ Ez a könyv-páros megtanít:
 ## Az interaktív futtatáshoz szükséges
 
 * Visual Studio Code [(code.visualstudio.com)](https://code.visualstudio.com/)
-  * A Workspace által aánlott bővítmények is szükségesek!
+  * A Workspace által ajánlott bővítmények is szükségesek!
 * .NET 7 SDK [(dotnet.microsoft.com)](https://dotnet.microsoft.com/download/dotnet/7.0)
 * ~~.NET Interactive kernel (`dotnet tool install --global Microsoft.dotnet-interactive` majd `dotnet interactive install jupyter`)~~
 
