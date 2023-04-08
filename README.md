@@ -11,7 +11,6 @@ Ez a könyv-páros megtanít:
 ## A könyv négy formátumban elérhető
 
 * .ipynb (Jupyter notebook)
-* .dib (.NET Interactive notebook)
 * .html (Renderelt HTML all-inclusive környezet)
 * .pdf (Pandoc-generált nyomtatvány, margóhibákkal, NEM AJÁNLOTT)
 
