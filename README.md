@@ -10,9 +10,10 @@ Ez a könyv-páros megtanít:
 
 ## A könyv négy formátumban elérhető
 
-* .ipynb (Jupyter notebook)
-* .html (Renderelt HTML all-inclusive környezet)
-* .pdf (Pandoc-generált nyomtatvány, margóhibákkal, NEM AJÁNLOTT)
+* .ipynb - Jupyter notebook
+* .md - Olvasó-kész Markdown fájl, AJÁNLOTT
+* .html - Renderelt HTML all-inclusive környezet, AJÁNLOTT
+* .pdf - HTML➡PDF nyomtatvány, fektetett A4
 
 ## Az interaktív futtatáshoz szükséges
 
