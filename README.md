@@ -6,7 +6,7 @@ Ez a könyv-páros megtanít:
 
 * Barebones tudásról egészen új osztályok szerkesztésén keresztül LINQ-lekérdezésig mindent
 * Viszonylag könnyű, érthető fogalmazásban íródott, de a haladók kedvéért kiegészítve a bonyolult háttértudással is
-* Mindezt .NET Interactive-ban kipróbálható snippet-ekkel bemutatva
+* Mindezt .NET Interactive-ban kipróbálható snippet-ekkel bemutatva C#-ban programozni
 
 ## A könyv négy formátumban elérhető
 
@@ -17,10 +17,10 @@ Ez a könyv-páros megtanít:
 
 ## Az interaktív futtatáshoz szükséges
 
-* Project Jupyter [(jupyter.org)](https://jupyter.org/) vagy Visual Studio Code [(code.visualstudio.com)](https://code.visualstudio.com/)
-  * Ha VS Code-ot használsz, akkor a .NET Interactive Notebooks bővítmény is kell [(marketplace.visualstudio.com)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode)
-* .NET 6 [(dotnet.microsoft.com)](https://dotnet.microsoft.com/download/dotnet/6.0)
-* .NET Interactive kernel (`dotnet tool install --global Microsoft.dotnet-interactive` majd `dotnet interactive install jupyter`)
+* Visual Studio Code [(code.visualstudio.com)](https://code.visualstudio.com/)
+  * A Workspace által aánlott bővítmények is szükségesek!
+* .NET 7 SDK [(dotnet.microsoft.com)](https://dotnet.microsoft.com/download/dotnet/7.0)
+* ~~.NET Interactive kernel (`dotnet tool install --global Microsoft.dotnet-interactive` majd `dotnet interactive install jupyter`)~~
 
 ## Licensz
 
@@ -36,3 +36,4 @@ A könyvek CC BY SA 4.0 alatt állnak. Lásd: [(creativecommons.org)](https://cr
 * C# Tutorial.hu [(csharptutorial.hu)](https://csharptutorial.hu/docs/hellovilag-hellocsharp/)
 * tutorialspoint C# Tutorial [(tutorialspoint.com)](https://www.tutorialspoint.com/csharp/)
 * TutorialsTeacher [(tutorialsteacher.com)](https://www.tutorialsteacher.com/)
+* Hernyák Zoltán: Magasszintú Programozási Nyelvek I. [(aries.ektf.hu)](https://aries.ektf.hu/~hz/wiki7/mprog1ea)

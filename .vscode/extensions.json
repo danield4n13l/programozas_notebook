@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-dotnettools.dotnet-interactive-vscode",
+        "ms-dotnettools.vscode-dotnet-pack",
+        "selcukermaya.se-csproj-extensions",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.vscodeintellicode-completions"
+    ]
+}
