@@ -1,11 +1,10 @@
-Üdv
-======
+# Üdv
 
 Ez egy interaktív-szerű tanuló füzet beépített *C#* kernellel, ami lehetővé teszi a sorok futtatását.  
 Próbáld ki nyugodtan, bár elsőre bonyolult lesz ([itt egy kis help](https://andrewlock.net/exploring-dotnet-interactive-notebooks/#:~:text=Installing%20.NET%20Interactive%20Notebooks)).  
-Ha PDF-ként kaptad meg, akkor másold ki a kódokat és futtasd offline/online, akár [_VSCode_](https://vscode.dev/)-ban.
+Ha PDF-ként kaptad meg, akkor másold ki a kódokat és futtasd offline/online, akár [*VSCode*](https://vscode.dev/)-ban.
 
-> Fontos: A **sorbeolvasást** és a **névtérdeklarálást** leszámítva minden más működik.
+> **Fontos:** A **sorbeolvasást** és a **névtérdeklarálást** leszámítva minden más működik.
 
 Mivel nem teljes a sztori fejlesztés-oldalról és saját oldalról sem, ne lepődj meg  
 ha egy-két errort vagy bugot találsz. Előre bocs.
@@ -17,6 +16,7 @@ Néhány infót pedig TutorialsPoint [(tutorialspoint.com)](tutorialspoint.com),
 # Alapszint
 
 ## 1.    C# avagy Csharp
+
 - OOP nyelv = Tárgy-orientált = "Mindent generalizálni, példányosítani kell." xd
 - .NET keretrendszeren működőképes appokra szánt
 - Windows, web, mobil, szerver, adatbázis
@@ -28,14 +28,13 @@ lefordítja futtatható programmá (`.exe` vagy `.dll` vagy etc.).
 ## 2. Változók, Kommentek és Whitespace
 
 Mégmielőtt tárgyalnánk a legkönnyebb dolgokat, több dolgot leszögezek:
- * Egy **kifejezés** (expression) akkor kifejezés, ha futás közben *egy értékre* fejezhető ki. (például `19` vagy `int kettő = 2;`)
- * Egy **állítás** (statement) a program alapvető része. *Sokfajta* van belőle, ezeket tárgyaljuk majd
- * Egy **blokk** (block) pedig *nulla vagy több állítás* csoportja egy `{}`-n belül  
-    > Fontos: C#-ban minden állítás helyére lehet blokkot írni (és fordítva)
- * Az adatok amiket létrehozunk, lehetnek **primitívek** (`2`, `'c'`, `false`) vagy **komplexek** (*tárgyak*, struktúrák)
- * A komplex adatok *részadatait* **tulajdonságoknak** nevezzük.
 
-
+- Egy **kifejezés** (expression) akkor kifejezés, ha futás közben *egy értékre* fejezhető ki. (például `19` vagy `int kettő = 2;`)
+- Egy **állítás** (statement) a program alapvető része. *Sokfajta* van belőle, ezeket tárgyaljuk majd
+- Egy **blokk** (block) pedig *nulla vagy több állítás* csoportja egy `{}`-n belül  
+    > **Fontos:** C#-ban minden állítás helyére lehet blokkot írni (és fordítva)
+- Az adatok amiket létrehozunk, lehetnek **primitívek** (`2`, `'c'`, `false`) vagy **komplexek** (*tárgyak*, struktúrák)
+- A komplex adatok *részadatait* **tulajdonságoknak** nevezzük.
 
 ##### Változók
 
@@ -49,15 +48,14 @@ A Csharp kulcsszavait (`if`, `else`, `return`, `using`, `class`) NEM lehet névk
 sem számokat legelső karakternek (pl. `123filmek`),  
 sem speckó karaktereket (`$:;?,%!+"'`) egyáltalán, kivétel ez alól az alsóvonás (`_`).
 
-Syntax:      
+Syntax:
+
 ```csharp
 Ttípus név;           //  <-  deklarálás (elnevezés)
 Ttípus név = érték;   //  <-  deklarálás és értékadás
 név = érték;          //  <-  csak értékadás
 név                   //  <-  érték lekérés
 ```
-
-
 
 ```C#
 int iSzám;                      // sokak által használt nevezés:    típus első betűje a név elején, utána a szótagok nagyonNagyBetűsek (camelCase)
@@ -81,7 +79,8 @@ A C# NEM **whitespace-érzékeny**, tehát a program működése **nem változik
 Ezen okból a **kommentek** és a **whitespace** *dokumentálásra*, sorok *hatástalanítására*  
 és az *olvashatóság* növelésére alkalmas.
 
-Syntax:      
+Syntax:
+
 ```csharp
   // egysoros komment
 
@@ -110,6 +109,7 @@ ezeket nevezzük **literáloknak** (szó jelentéséből fakadóan).
 
 A következő listában alaptípusok lesznek, ezek értékeit literálként meg tudjuk adni:  
 *(❗: megjegyzés; 🔢: értékei)*
+
 - *int* = egészszám *(System.Int32)*  
     *🔢*     Range: `-2147483648`-tól  `2147483647`-ig
 
@@ -137,7 +137,6 @@ A következő listában alaptípusok lesznek, ezek értékeit literálként meg 
 - *void* = értéktelen változó  
     *❗*     CSAK egy **visszérték** lehet ilyen típusú (azaz nem ad vissza semmit)
 
-
 ```C#
 int iSzámocska = 66666666;
 // int iSzámocska = 12345678;   //  <-  HIBA!   kétszer ne deklaráljunk
@@ -154,7 +153,7 @@ sorok szerepelnek.
 
 > Ha VSCode-ot használsz, plusz egy lépés a konzolba beírni hogy `dotnet new console` (vagy amilyen típust szeretnél a *console* helyett).
 
-> Update:    Az új .NET 6.0 rendszer miatt nem *muszály* kiírni a teljes kód testét, csak a top-level eljárások elegendőek.  
+> **Update:** Az új .NET 6.0 rendszer miatt nem *muszály* kiírni a teljes kód testét, csak a top-level eljárások elegendőek.  
 >Emiatt a default fájl is leszűkült a 'Hello World!' sorra :/
 
 Az alap program így fog kinézni:
@@ -188,12 +187,11 @@ Miután futtatod, egy **parancssor** *(terminál)* megjelenik, amiben működik 
 ## 5. Kiírás és beolvasás, kényszerítés
 
 ##### Kiírás
+
 A legtöbb appnak van **bemenete** és **kimenete**.
 
 Kiíráshoz legeslegtöbbször a `Console.Write()` vagy `Console.WriteLine()` eljárást használjuk.  
 A kiírandó értéket a **zárójelek belsejébe** rakjuk.
-
-
 
 ```C#
 int harom = 3;                                   // egy példa változó, deklarálva
@@ -208,22 +206,24 @@ Console.WriteLine($"Három, avagy {harom}");      // formatálás 2.0
 ```
 
 ##### Beolvasás
+
 Beolvasáshoz pedig a `Console.ReadLine()`-t vagy `Console.ReadKey()`-t használjuk.
 
-Mivel **visszaad** _(return-ol)_ egy értéket (és el akarjuk tárolni), **változóba tároljuk**.
+Mivel **visszaad** *(return-ol)* egy értéket (és el akarjuk tárolni), **változóba tároljuk**.
 
 És vigyázat! Ez a *funkció* (eljárás) csak `string` értékként adja vissza a bemenetet.  
 Ezért fontos, ha számot kell belőle varázsolni, az `int.Parse()` eljárás segíthet.
 
 ##### Típuskényszerítés
+
 Ha *alap* típusokkal gondolkozunk észszerűen, akkor használhatunk **típuskényszerítés**t,  
 például `double`→`int` esetében (ekkor a törtrész elveszik!).
 
 Syntax:
+
 ```csharp
 (Túj_típus)érték            //  <-  csak akkor működik, ha észszerű a kényszer.
 ```
-
 
 ```C#
 Console.WriteLine("Mi a neved?");
@@ -235,7 +235,6 @@ int iKor = Convert.ToInt32(Console.ReadLine());                   // itt string-
 Console.WriteLine("Szia {0}, te {1} éves vagy", sNév, iKor);
 ```
 
-
 ```C#
 Console.WriteLine("A 'c' karakter kódja: {0}", (int)'c');           // char->int; ASCII kód
 Console.WriteLine("A '3.1415' egész számként: {0}",(int)3.1415);    // decimal->int; a törtrész elvész
@@ -246,8 +245,6 @@ Console.WriteLine("A '3.1415' egész számként: {0}",(int)3.1415);    // decima
 Egy operátor egy (vagy több) **karakter** ami *programlogikai*, *matematikai* vagy *logikai* feladatot lát el.  
 A **sorrendiség** követi a matematika elveit (*PEMDAS*). Továbbiakért lásd: [(docs.microsoft.com)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#:~:text=with%20the%20highest-,precedence,-to%20the%20lowest).  
 A sorrend felülírható `()` zárójelekkel.
-
-
 
 ### Aritmetikus opok
 
@@ -264,7 +261,6 @@ Ezek adják a programozás számtani alapműveleteit.
 
 *⭐*:    Az osztásnál figyelembe kell venni a két tag típusát. `int`-et `int`-tel osztva elveszik a törtrész. Ekkor érdemes `double`-be vagy `float`-ba konvertálni először.
 
-
 ```C#
 int x = 11, y = 4;              // több változót is lehet deklarálni + beállítani egy sorban!
 Console.WriteLine(x+y);         // 15
@@ -279,21 +275,23 @@ Console.WriteLine(-x);          // -11
 ### Hozzárendelő opok
 
 Syntax:
+
 ```csharp
 változó = érték;        //    <-    átírás
 változő += módosítás;   //    <-    módosítás
 ```
+
 Az egyszerű **egyenlőségjel** (`=`) adja a hozzárendelést.
 
 Az első öt számtani operátort *(és a bitszintűeket is)* **össze lehet vonni** a hozzárendeléssel:
--    +=
--    -=
--    *=
--    /=
--    %=
+
+- +=
+- -=
+- *=
+- /=
+- %=
 
 Ezek egyenértékűek a `változó = változó Δ módosítás;` utasítással, persze mindegyik opra külön.
-
 
 ### Iteratív opok
 
@@ -307,9 +305,8 @@ Az iteratív operátorok csak eggyel változtatják az értéket.
 Ezek pedig egyenértékűek a `változó = változó Δ 1;` utasítással, persze külön-külön.
 
 **Nem mindegy**, hogy *milyen sorrendben* vannak az iteratív opok:
-* Ha a jel a név **előtt** van *(prefix)*, akkor először **változtat** aztán <u>adja vissza</u> a már változott értéket.  
-* Ha a jel a név **mögött** van *(postfix)*, akkor először a változó értékét <u>visszaadja</u>, majd **változtatja**.
-
+- Ha a jel a név **előtt** van *(prefix)*, akkor először **változtat** aztán <u>adja vissza</u> a már változott értéket.  
+- Ha a jel a név **mögött** van *(postfix)*, akkor először a változó értékét <u>visszaadja</u>, majd **változtatja**.
 
 ```C#
 int x = 0;
@@ -338,8 +335,8 @@ Egy `bool`-értéket adnak vissza *(igaz-hamisat)*, ezért lehet **feltételkén
 | Kisebb | < | `7 < 4` → false |
 | Nem egyenlő | != | `"abc" != "def"` → true |
 
-
 ### Logikai opok
+
 Két `bool`-értéket *(igaz-hamisat)* értéket **kötnek össze** logikailag.  
 Funkciójuk megegyezik hétköznapi szóhasználatukkal.
 
@@ -349,19 +346,17 @@ Funkciójuk megegyezik hétköznapi szóhasználatukkal.
 | Vagy | \|\| | `true \|\| false` → true |
 | Nem | ! | `!false` → true |
 
-
 ## 7. Logika, elágazások, ciklusok
 
 **Feltételes elágazásokra** van szükség, hogy a program egyes értékektől függjön.  
 Egy feltétel értéke biztosan `true` vagy `false`, tehát biztosan `bool` értékű.
-
-
 
 ##### `if-else` (Ha-Más)
 
 Az elágazások legalapvetőbb állítása. Hogyha a feltétel teljesül, a blokk lefut, ellenkező esetben nem.  
 
 Syntax:
+
 ```csharp
 if (feltétel)
 {                    // ha van '{}' teste akkor nem kell pontosvessző
@@ -382,7 +377,8 @@ if (feltétel) return 1;    //  itt  az 'if' egysoros blokk-nélküli, KELL ';'
 ```
 
 Külön operátorral tudunk egy **feltételes kifejezést** csinálni:  
-> Fun fact: Ez az egyetlen három-paraméteres operátor, ezért *tertiary* op-nak is hívják.  
+> *Fun fact:* Ez az egyetlen három-paraméteres operátor, ezért *tertiary* op-nak is hívják.  
+
 ```csharp
 feltétel ? /*ha igaz*/ : /*ha hamis*/ ;        // ez egy KIFEJEZÉS azaz ÉRTÉKET AD VISSZA!
     // pl. 
@@ -393,6 +389,7 @@ feltétel ? /*ha igaz*/ : /*ha hamis*/ ;        // ez egy KIFEJEZÉS azaz ÉRTÉ
 ```
 
 A Ha-Más logikákat lehet egymás után kötni (chain-elni)
+
 ```csharp
 if (felt1) {
 }
@@ -405,9 +402,6 @@ else {
 }
 ```
 
-
-
-
 ```C#
 bool jólVagy = true;
 if (jólVagy == true)
@@ -419,7 +413,6 @@ else
     Console.WriteLine("Jobbulást!");
 }
 ```
-
 
 ```C#
 int iSzám = 16;/*<==szerkessz meg*/
@@ -446,11 +439,10 @@ Mégmielőtt a **switchet** és a **hurkokat** tárgyalnánk, egy pár szót az 
 Három kulcsszó létezik C#-ban, amivel **ki lehet lépni** egy *elágazásból*.  
 Ezek pedig: `continue;`, `break;`, `return x;`.
 
-* A `continue;` egy ciklusban az **adott kört nem fejezi be**, azonnal visszaugrik a ciklus **elejére**.
-* A `break;` **teljesen kilép** az adott ciklusból, elágazásból.
-* A `return érték;` pedig az adott **eljárásból lép ki**, és *visszaad* a szülőfolyamatnak egy `érték`et.  
+- A `continue;` egy ciklusban az **adott kört nem fejezi be**, azonnal visszaugrik a ciklus **elejére**.
+- A `break;` **teljesen kilép** az adott ciklusból, elágazásból.
+- A `return érték;` pedig az adott **eljárásból lép ki**, és *visszaad* a szülőfolyamatnak egy `érték`et.  
     A `return` CSAK az eljárás **visszatérési érték** *(visszérték)* típusban adhat visza értéket!
-
 
 ##### Switch
 
@@ -458,6 +450,7 @@ Ha túl sok **egyenlőséget** néznél meg egy változóra nézve, használd a 
 A `switch` egy kifejezést **különféle értékekkel** vet össze, és aszerint végez műveleteket.
 
 Syntax:
+
 ```csharp
 switch (vált)                  
 {
@@ -483,9 +476,8 @@ switch (vált)
 Tehát: sok, egy kifejezésre értett `if-else` logikát könnyebben felírhatunk egy `switch` sok esetével (`case x:`).  
 A `default` eset akkor megy végbe, ha egyik eset sem volt igaz.
 
-> Fontos: A `break;`-ek nélkül átcsúszna a program **másik esetekbe** (a compiler ezt hibaként jelzi),  
+> **Fontos:** A `break;`-ek nélkül átcsúszna a program **másik esetekbe** (a compiler ezt hibaként jelzi),  
 > de elfogadható és működőképes megközelítés.
-
 
 ```C#
 int x = 4;
@@ -517,12 +509,13 @@ switch (x)
 **Ciklusoknak** nevezzük az ismétlődő elágazásokat, amik *egy feltételen* alapszanak.  
 Ciklusokból háromféle van: `while`, `for`, és `foreach`.
 
-
 ##### `while` (amíg) és `do..while` (csináld..amíg)
+
 A `while`-ciklus a legegyszerűbb fajta: **ellenőrzi** a feltételt; ha igaz, akkor lefut a blokk, majd *kezdi elölről*.  
 Hogyha *feltétel-ellenőrzést* a **végén** szeretnénk tenni, használjuk a `do..while` formát
 
 Syntax:
+
 ```csharp
 while (feltétel)
 {
@@ -534,8 +527,6 @@ do
     //a 'csináld..amíg' ciklus minimum egy kört lefut!
 } while (feltétel);                        // pontosvessző!
 ```
-
-
 
 ```C#
 int max = 10;
@@ -556,19 +547,20 @@ do
 ##### `for` (iteratív ciklus)
 
 A `for`-ciklus eggyel bonyolultabb, itt két extra dolgot kell figyelembe venni:  
+
 - Az **init** rész a *ciklus kezdete* **előtt** lefut, itt általában *ideiglenes változó-deklarálás* szokott lenni.  
 - A **körvége** pedig minden lefutott kör végén kerül futtatásra.
 
 Általában *tömbökön keresztüli* **indexelt** *(sorszám-szükséges)* feladatokra használjuk.
 
 Syntax:
+
 ```csharp
 for ( /*init*/ int i = 0; feltétel; /*körvége*/ i++)        //két ';' az elválasztó
 {
     //amíg a feltétel..
 }
 ```
-
 
 ```C#
 string sDolog = "Hello!";
@@ -584,11 +576,13 @@ A `foreach` a for-ciklus továbbfejlesztett, általánosabb verziója.
 Ezt akkor használjuk, ha egy tömb összes elemét akarjuk hasznosítani (sorszám nélkül).
 
 A "két" paramétere, `in` kulcsszóval elválasztva:
+
 - Egy ideiglenes változó deklarálása (`Ttípus ideigl`)  
     > Típusra használhatjuk a `var` szót (a program eldönti futás közben, melyik típus legyen)
 - A tömb, aminek az elemeit vizsgáljuk
 
 Syntax:
+
 ```csharp
 foreach(var ideigl in tömb)
 {
@@ -612,6 +606,7 @@ Egy eljárást **bármennyiszer** hívhatunk.
 A **nevekre** is ugyanúgy vonatkozik a *változókra vonatkozó szabályzat*.  
 
 Egy eljárás általánosan így néz ki:
+
 ```csharp
 Tvisszérték Név(T paraméter1, U paraméter2, ...)   //deklarálás
 {
@@ -620,7 +615,9 @@ Tvisszérték Név(T paraméter1, U paraméter2, ...)   //deklarálás
 
 Név(param1, param2)                                //hívás
 ```  
+
 ahol:
+
 - az eljárás *paraméterei* a zárójelén belül, vesszővel elválasztva vannak
 - az eljárás *utasításai* a blokkján belül tartózkodnak
 - az eljárásnak `Tvisszérték`-et kell *visszaadnia* visszatérésekor.  
@@ -628,6 +625,7 @@ ahol:
 
 A paramétereket lehet **opcionálisnak** állítani, ha megadjuk előre a *default* értékét,  
 vagy akár lehet *névszerint* is beírni:
+
 ```csharp
 static void Duplázás(int x, int y=2, int z) {/* ... */}
 
@@ -635,10 +633,10 @@ static void Duplázás(int x, int y=2, int z) {/* ... */}
 int iRes = Duplázás(z: 7, x: 18);        //a paraméterek:    x = 18; y = 2; z = 7;
 ```
 
-
 ##### Pass by value, reference, output
 
 A C# három féleképpen tudja **átadni az adatokat**:
+
 - mint *érték*
 - mint *referencia*
 - mint *kimenet*
@@ -646,7 +644,6 @@ A C# három féleképpen tudja **átadni az adatokat**:
 Alapból **értékként** adja tovább a paramétereket (nem a változókat adja, hanem az értékeiket),  
 de a `ref` kulcsszóval lehet **referenciaként** az objektumokat bevinni az eljárásokba.  
 **Kimenetként** pedig az `out` kulcsszóval lehet, így a paraméterek inkább *kiadnak* adatot mintsem betesznek.
-
 
 ```C#
 static void Sqr(int x) => (x*x);
@@ -673,7 +670,6 @@ Példának a faktoriális definíciója:    `4! = 4 * 3 * 2 * 1 = 24`
 Ezt megvalósítani nem nehéz, csak *önmagát hívatni kell*, és kell írni egy *kilépési feltételt*.  
 *(vagy örökké fut a program, újabb és újabb forkot nyitva = amatőr fork bomb)*
 
-
 ```C#
 static int Fact(int szam)
 {
@@ -692,10 +688,11 @@ Ugyan az a név, de **különböző** paraméterekkel!
 Ez akkor hasznos, ha egy általános funkciót *több típusra* szeretnénk alkalmazni.
 
 Egyes **operátorokat** *osztályokban* túl lehet tölteni, az `operator` kulcsszavat beillesztve az op elé.  
-Ezeket lehet túltölteni: *arithmetikai* opok (`+`, `-`, `*`, `/`); *relációs* opok (`<`, `>`, `==`, `!=`, `x^y`); bitszintű opok (`<<`, `>>`, `&`, `|`);   
+Ezeket lehet túltölteni: *arithmetikai* opok (`+`, `-`, `*`, `/`); *relációs* opok (`<`, `>`, `==`, `!=`, `x^y`); bitszintű opok (`<<`, `>>`, `&`, `|`);
 azaz az elsődleges és másodlagos opok nagyrésze.  
 Viszont egyes opokat tilos és lehetetlen túltölteni, mint: `x = y`, `x.y`, `c ? t : f`, `new`, `switch`, `delegate`, és sok más  
 (lásd [Túltölthető operátorok (docs.microsoft.com)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading#overloadable-operators))
+
 ```csharp
 class Valami
 {
@@ -704,7 +701,6 @@ class Valami
     public int operator- (int param1, int param2) {}             // param1-param2
 }
 ```
-
 
 ```C#
 static void Kiír(int a) {Console.WriteLine("Érték: " + a);}         // szöveg csatolása '+'-szal
@@ -717,7 +713,6 @@ Kiír("Ez itt ", 9.9999999);
 ```
 
 ## 9. Tömbök és Stringek
-
 
 ### Tömbök
 
@@ -736,6 +731,7 @@ Például négy darab egészet csoportosítva:
 Deklarálhatjuk kétféleképpen: **adatokkal**, vagy **hosszal**.
 
 Syntax:
+
 ```csharp
 típus[] név = {/*adatok*/};           // adatokkal deklarálás
 típus[] név = new típus[n];           // 'n' hoszú üres tömb deklarálás
@@ -749,7 +745,7 @@ név.Length                            // tömb hosszának lekérése
 Tömbökkel dolgozni sokféleképpen lehet, de a legalapabb módja az **iterálás** (minden egyes elemen keresztüli feldolgozás).  
 Ezt `for`-looppal tudjuk egyszerűen csinálni, ahol feltétel, hogy  
 az **i**deiglenes változónk *(itt: "iterátor")* kevesebb legyen, mint a tömb hossza (`tömb.Length`).  
-> Fontos: az iterátor változó értéke ne menjen túl a tömb hosszán (mivel nem létező elemeket kérne le)  
+> **Fontos:** az iterátor változó értéke ne menjen túl a tömb hosszán (mivel nem létező elemeket kérne le)  
 > ezt nevezik túlcsordulásnak, ekkor HIBA
 
 ```csharp
@@ -762,13 +758,13 @@ for (int i = 0; i < a.Length; i++)    // létrehozunk egy 'i' ideiglenes változ
 ```
 
 Ha index-iterátort nem akarunk használni, lehet `foreach`-ciklussal is.
+
 ```csharp
 foreach (int elem in a)               // itt NEM kell '[]';
 {
     Console.WriteLine(elem);
 }
 ```
-
 
 ```C#
 int[] intTömb = {10,16,21,35,47,55};
@@ -791,6 +787,7 @@ a 'tömb' általánosított; bármilyen típust be tud fogadni.
 int[ , ] kétdim = new int[3,4];                // kétdimenziós tömb int-ekből
 int[,] valami = { {1, 2}, {12, 9}, {5, 6} };   // u.a. csak értékmegadással
 ```
+
 Ez így nézne ki:
 
 |      | Oszlop1 | Oszlop2 | Oszlop3 | Oszlop4 |
@@ -803,6 +800,7 @@ Ne féljünk *több*, *egybeágyazott* `for` vagy `foreach` loopot használni az
 
 Egy másik több-tömbös megoldás is létezik, ezek az **egyeletlen tömbök**.  
 Ezekben a fő-tömb tagjai ugyanúgy tömbök.
+
 ```csharp
 int[][] egyeletlen = new int[][]    // két '[]'-t kell rakni!
 {                                   // és külön kell inicializálni (beállítani) ami itt példányosítással történik
@@ -812,38 +810,38 @@ int[][] egyeletlen = new int[][]    // két '[]'-t kell rakni!
 }
 ```
 
-A különbség a többdimenziós tömbök és az egyelentlen tömbök közt a **memóriahasználat**. 
- 
-* Egy *többdimenziós tömb* egy **megszakítatlan** memóriatér (egy *mátrix* basically)  
+A különbség a többdimenziós tömbök és az egyelentlen tömbök közt a **memóriahasználat**.
+
+- Egy *többdimenziós tömb* egy **megszakítatlan** memóriatér (egy *mátrix* basically)  
     aminek *ugyanannyi oszlopa van minden sorban*.
-* Egy *egyeletlen tömb* pedig **tömböknek a tömbje**, így a memória *tömbönként eltérhet* (pl. eltérő hossz).
-
-
+- Egy *egyeletlen tömb* pedig **tömböknek a tömbje**, így a memória *tömbönként eltérhet* (pl. eltérő hossz).
 
 ##### Fontos Array tulajdonságok
 
 Egypár fontos dolog az `Array` osztályból:
+
 ```csharp
 int[] arr = {2, 4, 7};
 ```
+
 - arr`.Length` megmondja a tömb hosszát (elemei számát).  
-    - fontos egy `for`-loopban!
+  - fontos egy `for`-loopban!
 - arr`.Rank` pedig a dimenzióinak számát.
 - arr`.Max()` a legnagyobb elemet adja vissza,
 - arr`.Min()` a legkisebbet,
 - arr`.Sum()` az összegüket.
 
 Egypár **statikus** (csak az Array osztályból hívható) eljárás:
+
 - `Array.Sort(`arr`)` visszaad egy új, rendezett tömböt (amit el kell még menteni!!),
 - `Array.Reverse(`arr`)` pedig egy fordított sorrendűt.
-- `Array.ConvertAll(`arr`, `elj`)` visszaad egy eljárás alapján átírt tömböt,  
+- `Array.ConvertAll(`arr`,`elj`)` visszaad egy eljárás alapján átírt tömböt,  
     ahol az elemek az eljárás első paraméterébe illesztődnek be.
 
 ### Stringek
 
 A megértés kedvéért könnyebb egy **stringre** *(karakterláncra)* úgy gondolni,  
 hogy az csupán egy *karakterekből álló tömb*; bár C#-ban már egy *általánosított osztály*.
-
 
 ```C#
 string asdfgh = "hello";
@@ -872,39 +870,44 @@ További infó: [C# Stringek (docs.microsoft.com)](https://docs.microsoft.com/en
 
 Amikor egy `"szöveget"` írsz, akkor végülis egy String osztályú példányt hozol létre.  
 Ezért a *stringeknek* is van pár fontos **tulajdonságuk**:
+
 ```csharp
 string st = "halihó";        // u.a. mint `string st = new string "halihó";`
 Console.WriteLine(st[2]);    // "l"
 ```
+
 - st`.Length` a hosszát adja vissza. *(int)*
 - st`.Split(k)` visszaad egy karakteren szétválasztott `string`-tömböt. *(string[])*
 - st`.IndexOf(a)` a keresett érték legelső előfordulásának indexét adja vissza. *(int)*
 - st`.Insert(1, "be")` beilleszt egy szöveget a megadott indexnél kezdve, majd visszaadja. *(string)*
 - st`.Remove(2)` kitöröl minden karaktert indextől kezdve, majd visszaadja. *(string)*
-- st`.Replace("csere", "új")` kicseréli a legelső **csere** szakaszt **új**ra, majd visszaadja. *(string)* 
+- st`.Replace("csere", "új")` kicseréli a legelső **csere** szakaszt **új**ra, majd visszaadja. *(string)*
 - st`.Substring(i, x)` kivág egy **x** hosszúságú részletet **i**-től, majd visszaadja. *(string)*
 - st`.Contains("b")` megnézi hogy benne van-e egy részlet a szövegben. *(bool)*
 
 Statikus eljárások:
-- `String.Concat(`a`, `b`)` csinál egy összevont szöveget (u.a. mint stringek közt a '+' operátor). *(string)*
-- `String.Equals(`a`, `b`)` ellenőrzi az azonosságot. *(bool)*
 
-# Folytatás a `programozas_gyorstalpalo_nehezebbik` című fájlban
+- `String.Concat(`a`,`b`)` csinál egy összevont szöveget (u.a. mint stringek közt a '+' operátor). *(string)*
+- `String.Equals(`a`,`b`)` ellenőrzi az azonosságot. *(bool)*
+
+# Folytatás a `programozas_kozepfok` című fájlban
 
 Olyan érdekes témákkal mint:
 
-* névterek, osztályok, tárgyak
-* inheritancia és polimorfizmus (ami két fancy szó az *öröklésre* és a *sokoldalúságra*)
-* struktúrák, enumok
-* hibák (exceptionök)
-* fájlok
-* általánosítás (*fuck yes all my homies love generalizing*)
-* delegátok és anonim (lambda) eljárások
-* és még több érdekesség...
+- névterek, osztályok, tárgyak
+- inheritancia és polimorfizmus (ami két fancy szó az *öröklésre* és a *sokoldalúságra*)
+- struktúrák, enumok
+- hibák (exceptionök)
+- fájlok
+- általánosítás (*fuck yes all my homies love generalizing*)
+- delegátok és anonim (lambda) eljárások
+- és még több érdekesség...
 
 -----------------------
+
 # Licensz
-&copy; Daniel Adam Farkas 2022
+
+&copy; Daniel Adam Farkas 2023
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.
 

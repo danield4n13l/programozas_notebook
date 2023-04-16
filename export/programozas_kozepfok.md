@@ -1,4 +1,5 @@
 # Középhaladő
+
 A neheze csak most jön >:D
 
 ## 10. Struktúrák és Enumok
@@ -9,6 +10,7 @@ C#-ban egy **struktúra** adott változótípusok csoportosítása, így új (ko
 Létrehozását a `struct` szóval kezdjük.
 
 pl:
+
 ```csharp
 struct Könyv                        // elnevezzük 'Könyv'-nek a típusunkat
 {
@@ -28,6 +30,7 @@ A struktúrák más nyelvekben eléggé primitívek, C#-ban viszont lehet **elj�
 **konstruktorokat** (de nem destruktorokat!), **tulajdonságokat**, **operátor eljárásokat**, etc... fűzni hozzá.
 
 Mi a különbség a `struct`ok és osztályok között?
+
 - *osztályok* referens típusok; *struktúrák* **érték** típusok
 - struktúráknál **nem kell** a `new` kulcsszó
 - struktúrák **nem támogatják** az öröklést
@@ -39,20 +42,22 @@ Egy **enumerációnak** (felsorolásnak) lényege az *egyszerű számozások eln
 Kifejezetten hasznos például fájlok megnyitási módjának kiválasztásakor  
 *(sokkal könnyebb megérteni a `FileAccess.Write` nevet, mint megjegyezni  a '2' számot)*,  
 de használatuk feladatonként eltér.
+
 ```csharp
 enum Irány                    // a számsor neve 'Irány'
 {                             // az alap számsor 0-tól kezdődik és 1-el növekszik
     Fel, Jobbra, Le, Balra    // Irány.Fel = 0; Irány.Jobbra = 1; Irány.Le = 2 ; Irány.Balra = 3
 }
 ```
+
 Az enumok *külön adattípusok*, így nem tudnak örökölni típust, és  
 a fordítóprogram nem fogja érteni az *implicit (operátorok nélküli sima) típusváltást*,  
 ezért fontos, hogy **típuskényszerítsünk**.
+
 ```csharp
 System.Console.WriteLine( (int)Irány.Fel );    // kimenet:    0
 System.Console.WriteLine( (int)Irány.Le );     // kimenet:    2
 ```
-
 
 ```C#
 struct Könyv                        // elnevezzük 'Könyv'-nek a típusunkat
@@ -121,12 +126,12 @@ Ha a csavarhúzók *tervét*, **osztályát** akarjuk meghatározni, használjun
 > Az osztály részeit együttesen **tagoknak** nevezzük.
 
 Miután deklaráltuk az osztályunkat, előhívhatunk egy *példányt* annak mintájára (**instanciálás**).  
+
 ```csharp
 // a main()-ben:
 Osztály pdny = new Osztály();
 pdny.Használ();
 ```
-
 
 ```C#
 class Csavarhúzó              // CSAK MÁS osztályokon és eljárásokon kívül!!!
@@ -157,7 +162,6 @@ cs1.nyélTípus = "gumírozott";
 Console.WriteLine(cs1.nyélTípus);
 ```
 
-
 ```C#
 class Ember
 {
@@ -182,6 +186,7 @@ Default esetben *értékként* adja tovább a paramétereket a C#.
 Ez azért van, mert a beépített alap típusok *érték-típusok*. Ezek a **`stack`**-be kerülnek.
 
 A `stack` egy *memória-részleg* ahova az értékek kerülnek, és a változók az értékekre **mutatnak**.
+
 ```csharp
 int x = 100;         //                     x      bé
 char bé = 'b';       //stack:    ...[][][][100][]['b'][]...
@@ -191,6 +196,7 @@ Ha tárgyakat csinálunk akkor *mint referencia* kapjuk meg őket.
 A tárgy változó a `stack`-ben lesz, viszont a tárgy adatai egy rendezetlen helyre,  
 a **`heap`**-be kerülnek.  
 A változóban ekkor egy *referencia* van, egy *cím* a `heap`-beli tárgyhoz.
+
 ```csharp
 int x = 100;                //                x         e1
                             // stack:    ...[100][][][0x052f1][]...
@@ -198,8 +204,8 @@ Ember e1 = new Ember();     //                           ↓ rámutat!
                             // heap:   ...          |Ember tárgy|  ...
 ```
 
-A `stack`-et *statikus* memóriaként használjuk (a méret **előre megadva**),  
-A `heap`-et pedig *dinamikusként*, mivel az egyéni példányok lehet **más memóriát** foglalnak idővel.
+> A `stack`-et *statikus* memóriaként használjuk (a méret **előre megadva**).  
+> A `heap`-et pedig *dinamikusként*, mivel az egyéni példányok lehet **más memóriát** foglalnak idővel.
 
 ##### Konstruktor
 
@@ -209,7 +215,7 @@ Erre való az osztály **építőeljárása** (*konstruktorja*). A *konstruktor*
 
 A konstruktor neve **megegyezik az osztály nevével**, és **nincs visszértéke**,  
 ráadásul **mindig** `public` kulcsszót kap, hogy máshonnan is lehessen hívni (pl. egy deklarálásnál).  
-> Fontos: a konstruktort is túl lehet tölteni.
+> **Fontos:** a konstruktort is túl lehet tölteni.
 
 ```csharp
 class Személy
@@ -225,11 +231,10 @@ class Személy
 ```
 
 Így ha egy új Személyt hívunk, így fog kinézni:
+
 ```csharp
 Személy sz1 = new Személy(16);      // példányosít -> lefuttatja a konstruktort
 ```
-
-
 
 ```C#
 class Személy
@@ -304,7 +309,6 @@ C#-ban ezek a kulcsszavak szabják meg az hozzáférést:
 
 A következő részletben a belső változót közvetlenül nem lehet elérni, csakis a társ-funkciókkal.
 
-
 ```C#
 class BankSzámla
 {
@@ -339,6 +343,7 @@ A `get`-nek minimum vissza kell térítenie egy adatot (`return ...`).
 A `set`-nek egy bemeneti rögzített paramétere van: a `value`. Azzal lehet dolgozni.
 
 Syntax:
+
 ```csharp
 class Osztály
 {
@@ -351,7 +356,6 @@ class Osztály
     public char bProp { get; set; }    //gyors szintaxis, get->return;set->hozzárendelés;
 }
 ```
-
 
 ```C#
 class Személy
@@ -385,10 +389,6 @@ s1.Kor = 1000;
 Console.WriteLine($"s1: {s1.Név} {s1.Kor}");
 ```
 
-    s1: Anna 75
-    s1: Anna -1
-    
-
 ### Hozzáférésjelző kulcsszavak
 
 - `public` - Teljes nyitottság; bármilyen program bármilyen kódja hozzáfér
@@ -404,6 +404,7 @@ Console.WriteLine($"s1: {s1.Név} {s1.Kor}");
 
 Ezt a kulcsszót már láttuk több helyen, legelősször  
 a `Main()` funkció előtt.
+
 ```csharp
 static void Main(string[] args)
 ```
@@ -417,7 +418,6 @@ Ebből kifolyólag az osztály statikus résztvevőinek csak **egy**
 
 **Konstansok** azok a résztvevők, amelyeket *nem lehet változtatni*.  
 Ezek alapból **statikusak**.
-
 
 ```C#
 class Matek
@@ -447,7 +447,6 @@ A `readonly` szó **csak olvashatóvá** teszi az adott osztályt/tulajdonságot
 2. Egy *readonly* változónak a **konstruktor adhat értéket**, a *konstans* **nem változhat egyáltalán**.
 3. Egy *readonly* változó értéke lehet **egy számítás eredménye**, a *konstans* viszont **hard-coded** (kézzel gépelt a programba).
 
-
 ```C#
 class Asdfgh
 {
@@ -469,6 +468,7 @@ class Asdfgh
 
 A `this` szó a futás közben jelenlevő akkori példányra utal.  
 A példány saját magából kéri ki az adatot.
+
 ```csharp
 class Ember
 {
@@ -483,10 +483,12 @@ class Ember
 ## Inheritancia és polimorfizmus
 
 Ez a két szó (sorban) nem jelent mást, mint ezt a két fontos fogalmat:
+
 - **öröklésnek** nevezzük, mikor egy osztály felhasznál egy másik osztályt alapjaként
 - **sokoldalúságnak** pedig egy résztvevő sok formáját jelenti *típustól* függöen
 
 ##### Öröklés
+
 Az öröklés például sok kicsi osztály általános tulajdonságainak közös tárgyalására hasznos.  
 Például egy `Állat` alaposztály hasznos lehet `Kutya` és `Macska` leányosztályok írásában,  
 hiszen csak *egy helyen* kellhet módosítani a **közös** tényezőket,  
@@ -500,7 +502,6 @@ Az örökölt konstruktorok is lefutnak az egyéniekkel együtt, ám a sorrend:
 
 A `protected` kulcsszó megengedi a leányosztályoknak hogy módosítsanak egy (egyébként privát) résztvevőt, amit örökölnek.  
 A `sealed` kulcsszó megakadályozza az öröklést teljesen.
-
 
 ```C#
 class Állat                                     // alaposztály / anyaosztály
@@ -517,10 +518,12 @@ class Kutya : Állat                             // syntax: class [osztálynév]
 ```
 
 ##### Sokoldalúság
+
 Ez szimplán egy alaposztály örökölt résztvetőinek,  
 a **leányosztályokban megváltoztatott**, sokféle formáját jelenti.  
 Máshogy fogalmazva: **felülírható eljárások** az alaposztályban.  
 Ezt a `virtual` kulcsszóval érjük el:
+
 ```csharp
 class Síkidom {
     public virtual void Rajzol() {
@@ -531,6 +534,7 @@ class Síkidom {
 
 Így ha egy leányosztály egy speciálisabb (*de ugyanolyan nevű*) eljárást akar,  
 az `override` kulcsszót használja:
+
 ```csharp
 class Téglalap : Síkidom {
     public override void  Rajzol() {
@@ -538,8 +542,8 @@ class Téglalap : Síkidom {
     }
 }
 ```
-Így felülíródik az alaposztály `Rajzol` eljárása.
 
+Így felülíródik az alaposztály `Rajzol` eljárása.
 
 ```C#
 class Síkidom {
@@ -560,6 +564,7 @@ Síkidom t1 = new Téglalap();    // típusa Síkidom, de benne egy Téglalap va
 Ha pedig nincs értelme egynéhány eljárást definiálni az alaposztályban, akkor  
 használjunk `abstract` osztályt.  
 Ez *értéktelen*, de *felülírható* eljárásokat engedélyezi.
+
 ```csharp
 abstract class Síkidom {                // osztály elé kell; eljárások elé ahova kell, oda
     public abstract void Rajzol();      // CSAK absztrakt osztályban lehet absztrakt eljárás!!
@@ -567,7 +572,6 @@ abstract class Síkidom {                // osztály elé kell; eljárások elé
 ```
 
 Az absztraktok **saját példányosítása tilos**.
-
 
 ```C#
 abstract class Síkidom {
@@ -602,10 +606,10 @@ Interfészek **nem tartalmazhatnak változókat (mezőket)**.
 
 Mi értelme *interfészt* használni ha van *absztrakt* is?  
 Azért éri meg *interfészt* használni, mert abból **több is szolgálhat alapul** örökléskor.
+
 ```csharp
 class Valami : IEgyik, IMásik, etc...
 ```
-
 
 ```C#
 public interface ISíkidom {
@@ -630,6 +634,7 @@ Lehet létrehozni, módosítani, törölni fájlokat.
 ##### `File` osztály
 
 A `File` osztály pont erre való:
+
 ```csharp
 string valami = "Valami szöveg.";
 File.WriteAllText("text.txt", valami);        // átírja a "text.txt" tartalmát a szövegre
@@ -648,6 +653,7 @@ File.WriteAllText("text.txt", valami);        // átírja a "text.txt" tartalmá
 
 A `FileStream` osztály segít alacsony szinten írni/olvasni/lezárni egy fájlt.  
 Ennek az osztálynak a szülőosztálya a `Stream` absztrakt.
+
 ```csharp
 FileStream fájlocska = new FileStream("fájlnév", fájlMód, fájlHozzáférésMód, fájlMegosztásMód);
 /*
@@ -656,7 +662,6 @@ FileStream fájlocska = new FileStream("fájlnév", fájlMód, fájlHozzáféré
          fájlMegosztásMód egy FileShare enum = {Inheritable, None, Read, ReadWrite, Write}
 */
 ```
-
 
 ```C#
 using System.IO;                // ne feledd! 
@@ -682,7 +687,7 @@ fájl.Close();                               // és bezárjuk a fájlt, levessz�
 Másik technika a `StreamReader`/`BinaryReader` osztályt használni. Ez különben hasonló  
 a standard bemenet olvasásához/írásához (a `Console` osztály részei `TextReader` osztályon alapulnak).
 
-Itt használhatunk az automata bezárás érdekében `using` kulcsszót, ami megadja a fájl kezelőjének 
+Itt használhatunk az automata bezárás érdekében `using` kulcsszót, ami megadja a fájl kezelőjének
 
 ```csharp
 StreamReader fájlforrás = new StreamReader("fájl",fájlHozzáférésMód);    // u.a. mint FileStream
@@ -721,6 +726,7 @@ Ezeket `Exception`-öknek (*kivételeknek*, *hibáknak*) nevezzük.
 A hibákat a `try-catch` utasításokkal el lehet fogni, így nem fog a hiba miatt *kilépni* a futásból a program.  
 A `finally` utasítás pedig hibától függetlenül lefuttat kódot.
 Syntax:
+
 ```csharp
 try 
 {
@@ -735,7 +741,6 @@ finally
     // független a hibáktól...
 }
 ```
-
 
 ```C#
 try
@@ -760,6 +765,7 @@ finally
 Ha pedig mi akarunk hibákat dobni és potenciálisan leállítani a hibás programot,  
 a `throw` szóval meg tudjuk tenni. Egy hiba osztály (minimum `System.Exception`)  
 **példányát** (kell a `new`) kell megadni.
+
 ```csharp
 ArithmeticException hibaPéldány = new ArithmeticException("Buta vagy!");
 throw hibaPéldány;        // előre példányosított
@@ -773,8 +779,6 @@ catch(Exception exc)
     throw;            // visszadobja automatikusan az 'exc' hibát
 }
 ```
-
-
 
 ```C#
 int bemenet = 15;
@@ -791,6 +795,7 @@ feladatot végző eljárást készíteni.
 
 Például ha bevezetnénk egy `Csere` eljárást ami megcseréli két  
 változó értékét a helyüket megtartva:
+
 ```csharp
 static void Csere(ref int a, ref int b)        // (a 'ref' szócskát vettük, referenciaként adja a változót)
 {
@@ -804,7 +809,6 @@ Ha több típusra is akarnánk ugyanezt használni, általánosítunk.
 Könnyebb, olvashatóbb, és kezelhetőbb megoldás.
 
 Használata:    az eljárásnév után *"<>"*-t rakunk és beleírjuk az általános típusokat
-
 
 ```C#
 static void Csere<Ált>(ref Ált a, ref Ált b)    // a "Ált" típus itt egy általános típust jelent
@@ -834,7 +838,6 @@ Ugyanúgy példányosítani kell, méghozzá a konstruktorában a megadott eljá
 
 Például itt egy delegát amibe egy **string**-paraméterű, **int**-visszértékű eljárás megy:
 
-
 ```C#
 public delegate int Delegátus (string s);                        // string-param int-return delegate
 
@@ -849,7 +852,6 @@ Console.WriteLine(d1("héber"));
 Lehet **több** delegát-példányt egybekötni, ezt **multicasting**-nak hívják.  
 Ezzel egy név alatt több, *ugyanolyan típusú* delegát hívható.  
 A hozzákötést a `+` oppal, levételt a `-` oppal lehet.
-
 
 ```C#
 public static int Összead(ref int n, int p) {   // ref-int-param int-param int-return eljárás
@@ -884,10 +886,10 @@ Ez egy **kifejezéses** v. **állításos** eljárást készít.  (*expression*-
 Ha egy kifejezés-lambdát nem akarunk elnevezni, **anonim** (névtelen) eljárásnak hívjuk.  
 Ezek visszértéke a bennük levő utolsó kifejezés értékén múlik
 Syntax:
+
 ```csharp
 (paraméterek) => kifejezés
 ```
-
 
 ```C#
 public static int Négyzet(int x) => x*x;
@@ -913,9 +915,9 @@ A **LINQ** (Language-Integrated Query) egy olyan *lekérdezési* nyelvezet, amin
 Két szintaxisa létezik: **metódus-láncos** és ***Query***.
 
 ##### Metódus-lánc syntax
+
 A *metódus-láncos* alakot használtuk (ld. stringek sorba rendezése), ekkor egy  
 gyűjtemény **metódusait** (saját eljárásait) előhívjuk sorban, tetszés szerint:
-
 
 ```C#
 string[] szia = {"a", "abcde", "a", "abcdefgh", "abc"}; // egy gyüjtemény
@@ -936,7 +938,6 @@ A **Query** célja hogy az adatbázis-kezelő nyelvekhez (SQL, Visual Basic) has
 mint egy lekérdező (hence the name) nyelv, könnyítve a programozást.  
 Kulcsszavai *majdnem* egy az egyben egyeznek a metódusokkal:
 
-
 ```C#
 string[] szia = {"a", "abcde", "a", "abcdefgh", "abc"}; // egy gyüjtemény
 var sorban = (from elem in szia                   // kötelező sor, elem = ideiglenes változó
@@ -948,7 +949,6 @@ var sorban = (from elem in szia                   // kötelező sor, elem = idei
                     ;
 foreach (var item in sorban) Console.WriteLine(item);
 ```
-
 
 ```C#
 using System.Linq;                  // linq névtér!!
@@ -981,11 +981,11 @@ foreach (var item in sorban)
 
 | Metódus (_**vissz-érték**-lambda_) |  Query-szintaxis         |  Jelentés              |
 |  :-------------------------:       |   :--------------------: | :---------             |
-| `var ` *x* `=` *gyűjt*          | `from` *x* `in` *gyűjt*    | A lekérdezés kezdete, `x` az ideiglenes változó `gyűjt` forrásból |
+| `var` *x* `=` *gyűjt*          | `from` *x* `in` *gyűjt*    | A lekérdezés kezdete, `x` az ideiglenes változó `gyűjt` forrásból |
 | `.Select(`_**var**-lambda_`)`   | `select` *valami*          | Adatkiválasztás, query végén **kötelező**! |
 | `.Where(`_**bool**-lambda_`)`   | `where` *feltétel*         | Igaz-hamis feltételes kiválasztás |
 | `.OrderBy(`_**int**-lambda_`)` / `.OrderByDescending(`_**int**-lambda_`)` | `orderby` *tulajd* *irány* | Rendszerezés szám-kifejezés alapján |
-| `.Join(`*gyűjt2*`,` _**var**-lambda_`,` _**var**-lambda_`,` _**var**-lambda_`)` | `join` *y* `in` *gyűjt2* `on` *x-tulajd* `equals` *y-tulajd* | Összekapcsol két gyűjteményt egy közös kulcs használatával. Metódusként az első két _var-lambda_ a query-nek az `equals` részével egyezik meg.  A harmadik _var-lambda_ megegyezik egy `select new {}` résszel |
+| `.Join(`*gyűjt2*`,` _**var**-lambda_`,` _**var**-lambda_`,` _**var**-lambda_`)` | `join` *y* `in` *gyűjt2* `on` *x-tulajd* `equals` *y-tulajd* | Összekapcsol két gyűjteményt egy közös kulcs használatával. Metódusként az első két *var-lambda* a query-nek az `equals` részével egyezik meg.  A harmadik *var-lambda* megegyezik egy `select new {}` résszel |
 | `.GroupBy(`_**var**-lambda_`)`  | `group` *x* `by` *x-tulajd* `into` *csop* | Csoportosítja a bejövő adatokat egy tulajdonság szerint. Egy csoport egy kulcsból (`Key`) és elemeiből áll, ezért két `foreach` is kellhet |
 | `.Skip(`*w*`)` | `-` | Kihagy `w` elemet az elejéről |
 | `.Take(`*w*`)` | `-` | Kiválaszt `w` elemet az elejéről |
@@ -1007,8 +1007,10 @@ foreach (var item in sorban)
 <sup>2</sup>: .NET 6-ban alternatívájuk a `...By()` metódus, ami nem a lambda-kifejezés típusával tér vissza, hanem az *eredeti tárolt típusával*.
 
 -----------------------
+
 # Licensz
-&copy; Daniel Adam Farkas 2022
+
+&copy; Daniel Adam Farkas 2023
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.
 

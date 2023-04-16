@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Program
 {
@@ -10,11 +12,11 @@ namespace Program
     {
         public string név;
         public int szám;
-        public void set(string név, int szám = -1)
-    {
-        this.név = név;
-        this.szám = szám;
-    }
+        public void Set(string név, int szám = -1)
+        {
+            this.név = név;
+            this.szám = szám;
+        }
     }
     class Program
     {
@@ -34,14 +36,19 @@ namespace Program
         /// Kimenet:    <c>Szia Péter!</c>
         /// </example>
         static void Szia(string név) => Console.WriteLine($"Szia ${név}!");
+
+        /// <summary>
+        /// Minden C#-program entrypointja: a Main() eljárás
+        /// </summary>
+        /// <param name="args">A programnak bejuttatott indítási paraméterek listája</param>
         static void Main(string[] args)
         {
 
             string asd = "nuiznf";
-            string qwi = new String(new char[] {'h', 'e', 'l', 'l', 'o', '\x00'});
-            System.Console.WriteLine(asd + "\n" + qwi);
+            string qwi = new string(new char[] { 'h', 'e', 'l', 'l', 'o', '\x00' });
+            Console.WriteLine(asd + "\n" + qwi);
 
-
+            Szia("Petike");
         }
     }
 }

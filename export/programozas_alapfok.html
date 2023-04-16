@@ -15114,7 +15114,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 Próbáld ki nyugodtan, bár elsőre bonyolult lesz (<a href="https://andrewlock.net/exploring-dotnet-interactive-notebooks/#:~:text=Installing%20.NET%20Interactive%20Notebooks">itt egy kis help</a>).<br />
 Ha PDF-ként kaptad meg, akkor másold ki a kódokat és futtasd offline/online, akár <a href="https://vscode.dev/"><em>VSCode</em></a>-ban.</p>
 <blockquote>
-<p>Fontos: A <strong>sorbeolvasást</strong> és a <strong>névtérdeklarálást</strong> leszámítva minden más működik.</p>
+<p><strong>Fontos:</strong> A <strong>sorbeolvasást</strong> és a <strong>névtérdeklarálást</strong> leszámítva minden más működik.</p>
 </blockquote>
 <p>Mivel nem teljes a sztori fejlesztés-oldalról és saját oldalról sem, ne lepődj meg<br />
 ha egy-két errort vagy bugot találsz. Előre bocs.</p>
@@ -15156,7 +15156,7 @@ lefordítja futtatható programmá (<code>.exe</code> vagy <code>.dll</code> vag
 <li>Egy <strong>kifejezés</strong> (expression) akkor kifejezés, ha futás közben <em>egy értékre</em> fejezhető ki. (például <code>19</code> vagy <code>int kettő = 2;</code>)</li>
 <li>Egy <strong>állítás</strong> (statement) a program alapvető része. <em>Sokfajta</em> van belőle, ezeket tárgyaljuk majd</li>
 <li>Egy <strong>blokk</strong> (block) pedig <em>nulla vagy több állítás</em> csoportja egy <code>{}</code>-n belül<blockquote>
-Fontos: C#-ban minden állítás helyére lehet blokkot írni (és fordítva)</blockquote>
+<strong>Fontos:</strong> C#-ban minden állítás helyére lehet blokkot írni (és fordítva)</blockquote>
 </li>
 <li>Az adatok amiket létrehozunk, lehetnek <strong>primitívek</strong> (<code>2</code>, <code>'c'</code>, <code>false</code>) vagy <strong>komplexek</strong> (<em>tárgyak</em>, struktúrák)</li>
 <li>A komplex adatok <em>részadatait</em> <strong>tulajdonságoknak</strong> nevezzük.</li>
@@ -15326,7 +15326,7 @@ sorok szerepelnek.</p>
 <p>Ha VSCode-ot használsz, plusz egy lépés a konzolba beírni hogy <code>dotnet new console</code> (vagy amilyen típust szeretnél a <em>console</em> helyett).</p>
 </blockquote>
 <blockquote>
-<p>Update:    Az új .NET 6.0 rendszer miatt nem <em>muszály</em> kiírni a teljes kód testét, csak a top-level eljárások elegendőek.<br />
+<p><strong>Update:</strong> Az új .NET 6.0 rendszer miatt nem <em>muszály</em> kiírni a teljes kód testét, csak a top-level eljárások elegendőek.<br />
 Emiatt a default fájl is leszűkült a 'Hello World!' sorra :/</p>
 </blockquote>
 <p>Az alap program így fog kinézni:</p>
@@ -15774,7 +15774,7 @@ Egy feltétel értéke biztosan <code>true</code> vagy <code>false</code>, tehá
 </pre></div>
 <p>Külön operátorral tudunk egy <strong>feltételes kifejezést</strong> csinálni:</p>
 <blockquote>
-<p>Fun fact: Ez az egyetlen három-paraméteres operátor, ezért <em>tertiary</em> op-nak is hívják.</p>
+<p><em>Fun fact:</em> Ez az egyetlen három-paraméteres operátor, ezért <em>tertiary</em> op-nak is hívják.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><span class="n">feltétel</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="cm">/*ha igaz*/</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="cm">/*ha hamis*/</span><span class="w"> </span><span class="p">;</span><span class="w">        </span><span class="c1">// ez egy KIFEJEZÉS azaz ÉRTÉKET AD VISSZA!</span>
 <span class="w">    </span><span class="c1">// pl. </span>
@@ -15905,7 +15905,7 @@ A <code>switch</code> egy kifejezést <strong>különféle értékekkel</strong>
 <p>Tehát: sok, egy kifejezésre értett <code>if-else</code> logikát könnyebben felírhatunk egy <code>switch</code> sok esetével (<code>case x:</code>).<br />
 A <code>default</code> eset akkor megy végbe, ha egyik eset sem volt igaz.</p>
 <blockquote>
-<p>Fontos: A <code>break;</code>-ek nélkül átcsúszna a program <strong>másik esetekbe</strong> (a compiler ezt hibaként jelzi),<br />
+<p><strong>Fontos:</strong> A <code>break;</code>-ek nélkül átcsúszna a program <strong>másik esetekbe</strong> (a compiler ezt hibaként jelzi),<br />
 de elfogadható és működőképes megközelítés.</p>
 </blockquote>
 
@@ -16321,7 +16321,7 @@ Ebből kifolyólag a sorszámok <strong>soha nem érik el</strong> a tömb elems
 Ezt <code>for</code>-looppal tudjuk egyszerűen csinálni, ahol feltétel, hogy<br />
 az <strong>i</strong>deiglenes változónk <em>(itt: &quot;iterátor&quot;)</em> kevesebb legyen, mint a tömb hossza (<code>tömb.Length</code>).</p>
 <blockquote>
-<p>Fontos: az iterátor változó értéke ne menjen túl a tömb hosszán (mivel nem létező elemeket kérne le)<br />
+<p><strong>Fontos:</strong> az iterátor változó értéke ne menjen túl a tömb hosszán (mivel nem létező elemeket kérne le)<br />
 ezt nevezik túlcsordulásnak, ekkor HIBA</p>
 </blockquote>
 <div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">};</span><span class="w">            </span><span class="c1">// a tömbünk (7 hosszú)</span>
@@ -16554,7 +16554,7 @@ Ezért a <em>stringeknek</em> is van pár fontos <strong>tulajdonságuk</strong>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Folytat%C3%A1s-a-programozas_gyorstalpalo_nehezebbik-c%C3%ADm%C5%B1-f%C3%A1jlban">Folytat&#225;s a <code>programozas_gyorstalpalo_nehezebbik</code> c&#237;m&#369; f&#225;jlban<a class="anchor-link" href="#Folytat%C3%A1s-a-programozas_gyorstalpalo_nehezebbik-c%C3%ADm%C5%B1-f%C3%A1jlban">&#182;</a></h1><p>Olyan érdekes témákkal mint:</p>
+<h1 id="Folytat%C3%A1s-a-programozas_kozepfok-c%C3%ADm%C5%B1-f%C3%A1jlban">Folytat&#225;s a <code>programozas_kozepfok</code> c&#237;m&#369; f&#225;jlban<a class="anchor-link" href="#Folytat%C3%A1s-a-programozas_kozepfok-c%C3%ADm%C5%B1-f%C3%A1jlban">&#182;</a></h1><p>Olyan érdekes témákkal mint:</p>
 <ul>
 <li>névterek, osztályok, tárgyak</li>
 <li>inheritancia és polimorfizmus (ami két fancy szó az <em>öröklésre</em> és a <em>sokoldalúságra</em>)</li>
@@ -16577,7 +16577,7 @@ Ezért a <em>stringeknek</em> is van pár fontos <strong>tulajdonságuk</strong>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr />
-<h1 id="Licensz">Licensz<a class="anchor-link" href="#Licensz">&#182;</a></h1><p>© Daniel Adam Farkas 2022</p>
+<h1 id="Licensz">Licensz<a class="anchor-link" href="#Licensz">&#182;</a></h1><p>© Daniel Adam Farkas 2023</p>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.</p>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
 

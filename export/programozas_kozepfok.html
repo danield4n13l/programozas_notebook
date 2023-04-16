@@ -15365,8 +15365,10 @@ A változóban ekkor egy <em>referencia</em> van, egy <em>cím</em> a <code>heap
 <span class="n">Ember</span><span class="w"> </span><span class="n">e1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ember</span><span class="p">();</span><span class="w">     </span><span class="c1">//                           ↓ rámutat!</span>
 <span class="w">                            </span><span class="c1">// heap:   ...          |Ember tárgy|  ...</span>
 </pre></div>
-<p>A <code>stack</code>-et <em>statikus</em> memóriaként használjuk (a méret <strong>előre megadva</strong>),<br />
+<blockquote>
+<p>A <code>stack</code>-et <em>statikus</em> memóriaként használjuk (a méret <strong>előre megadva</strong>).<br />
 A <code>heap</code>-et pedig <em>dinamikusként</em>, mivel az egyéni példányok lehet <strong>más memóriát</strong> foglalnak idővel.</p>
+</blockquote>
 
 </div>
 </div>
@@ -15384,7 +15386,7 @@ Erre való az osztály <strong>építőeljárása</strong> (<em>konstruktorja</e
 <p>A konstruktor neve <strong>megegyezik az osztály nevével</strong>, és <strong>nincs visszértéke</strong>,<br />
 ráadásul <strong>mindig</strong> <code>public</code> kulcsszót kap, hogy máshonnan is lehessen hívni (pl. egy deklarálásnál).</p>
 <blockquote>
-<p>Fontos: a konstruktort is túl lehet tölteni.</p>
+<p><strong>Fontos:</strong> a konstruktort is túl lehet tölteni.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Személy</span>
 <span class="p">{</span>
@@ -15537,19 +15539,22 @@ amely védi a nyers adatokat.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Getterek-%C3%A9s-Setterek">Getterek &#233;s Setterek<a class="anchor-link" href="#Getterek-%C3%A9s-Setterek">&#182;</a></h5><p>Ha <strong>EGY</strong> taggal akarunk <em>privát</em> változót <strong>lekérni</strong> és/vagy <strong>változtatni</strong> <em>közvetlen hozzárendelés</em> nélkül,<br />
-<strong>tulajdonságokat</strong> <em>(property-ket)</em> használunk.<br />
-A <strong><code>get</code></strong> és <strong><code>set</code></strong> részeljárások, amik feldolgozzák az áthaladó adatot.</p>
-<p>A <em>property</em>-knek a fordító <strong>implicit</strong> módon (<em>kontextustól függően</em>) ad értéket.<br />
+<h5 id="Getterek-%C3%A9s-Setterek">Getterek &#233;s Setterek<a class="anchor-link" href="#Getterek-%C3%A9s-Setterek">&#182;</a></h5><p>Ha <strong>EGY</strong> dologgal akarunk <em>privát</em> tagot <strong>lekérni</strong> és/vagy <strong>változtatni</strong> <em>közvetlen hozzárendelés</em> nélkül,<br />
+<strong>akcesszorokat</strong> <em>(accessor-okat, lefordítva: hozzáférőket)</em> használunk.<br />
+Egy <em>akcesszor</em> <strong>egy név alatt</strong> <em>lekérhet</em> és <em>bevihet</em> adatot.<br />
+A <strong><code>get</code></strong> és <strong><code>set</code></strong> egy akcesszor részeljárásai, amik feldolgozzák az áthaladó adatokat.</p>
+<p>Az <em>akcesszoroknak</em> a fordító <strong>implicit</strong> módon (<em>kontextustól függően</em>) ad értéket.<br />
 Tehát ha <em>értéket váró</em> eljárásba rakjuk, a <code>get</code>-et használja,<br />
-ha pedig egy <em>értéket adunk ennek</em>, akkor a <code>set</code>-et.</p>
+ha pedig <em>értéket adunk ennek</em>, akkor a <code>set</code>-et.</p>
+<p>A <code>get</code>-nek minimum vissza kell térítenie egy adatot (<code>return ...</code>).<br />
+A <code>set</code>-nek egy bemeneti rögzített paramétere van: a <code>value</code>. Azzal lehet dolgozni.</p>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Osztály</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aProp</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/*lekérés*/</span><span class="w">  </span><span class="p">}</span>
-<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/*bevitel*/</span><span class="w">  </span><span class="p">}</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/*lekérés, minimum &#39;return;&#39;*/</span><span class="w">  </span><span class="p">}</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/*bevitel &#39;value&#39;-val*/</span><span class="w">  </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">bProp</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">    </span><span class="c1">//gyors szintaxis, get-&gt;return;set-&gt;hozzárendelés;</span>
@@ -15589,7 +15594,11 @@ ha pedig egy <em>értéket adunk ennek</em>, akkor a <code>set</code>-et.</p>
 <span class="n">Személy</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Személy</span><span class="p">();</span>
 
 <span class="n">s1</span><span class="p">.</span><span class="n">Név</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Anna&quot;</span><span class="p">;</span>
-<span class="n">s1</span><span class="p">.</span><span class="n">Kor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span>
+<span class="n">s1</span><span class="p">.</span><span class="n">Kor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">75</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;s1: {s1.Név} {s1.Kor}&quot;</span><span class="p">);</span>
+
+<span class="n">s1</span><span class="p">.</span><span class="n">Kor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">;</span>
 
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;s1: {s1.Név} {s1.Kor}&quot;</span><span class="p">);</span>
 </pre></div>
@@ -16610,7 +16619,7 @@ Kulcsszavai <em>majdnem</em> egy az egyben egyeznek a metódusokkal:</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr />
-<h1 id="Licensz">Licensz<a class="anchor-link" href="#Licensz">&#182;</a></h1><p>© Daniel Adam Farkas 2022</p>
+<h1 id="Licensz">Licensz<a class="anchor-link" href="#Licensz">&#182;</a></h1><p>© Daniel Adam Farkas 2023</p>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.</p>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
 
